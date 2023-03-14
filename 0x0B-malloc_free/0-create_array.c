@@ -1,47 +1,30 @@
-
-BrightDaniel
-/
-alx-low_level_programming
-Public
-Code
-Issues
-7
-Pull requests
-1
-Actions
-Projects
-Security
-Insights
-alx-low_level_programming/0x0B-malloc_free/0-create_array.c
-@BrightDaniel
-BrightDaniel malloc_free Done
- 1 contributor
-28 lines (23 sloc)  509 Bytes
 #include "main.h"
 #include <stdlib.h>
 
 /**
- * create_array - creates an array of chars,
- * and initializes it with a specific char.
- * @size: the size of the array
- * @c: initial value
+ * create_array - Creates an array of chars and
+ *                initializes it with a specific char.
+ * @size: The size of the array to be initialized.
+ * @c: The specific char to intialize the array with.
  *
- * Return: a pointer to the array, or NULL if it fails
+ * Return: If size == 0 or the function fails - NULL.
+ *         Otherwise - a pointer to the array.
  */
 char *create_array(unsigned int size, char c)
 {
 	char *array;
-	unsigned int i;
+	unsigned int index;
 
 	if (size == 0)
 		return (NULL);
 
-	array = (char *)malloc(sizeof(char) * size);
+	array = malloc(sizeof(char) * size);
+
 	if (array == NULL)
 		return (NULL);
 
-	for (i = 0; i < size; i++)
-		array[i] = c;
+	for (index = 0; index < size; index++)
+		array[index] = c;
 
 	return (array);
 }
