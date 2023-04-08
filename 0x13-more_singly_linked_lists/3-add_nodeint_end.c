@@ -1,32 +1,34 @@
 #include "lists.h"
 
 /**
- * add_nodeint_end - Add a new node at the end of a list.
- * @head: Address of the first node of a list.
- * @n: Integer to insert in the new node.
- * Return: Address of the new node.
- **/
-
+ * add_nodeint_end - add a new node at the end of a listint_t list
+ * @head: pointer to the pointer the first node
+ * @n: the data to be stored in the node
+ *
+ * Return: a pointer to the pointer to the first node
+ */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *ptr, *node;
+	/* aux is a pointer I use for moving to the tail of the list*/
+	listint_t *new, *x;
 
-	ptr = malloc(sizeof(listint_t));
-	if (ptr == NULL)
-		return (NULL);
-
-	ptr->n = n;
-	ptr->next = NULL;
-
-	if (*head == NULL)
+	new = malloc(sizeof(listint_t));
+	if (!new)
 	{
-		*head = ptr;
-		return (ptr);
+		return (NULL);
 	}
+	new->n = n;
 
-	node = *head;
-	while (node->next)
-		node = node->next;
-	node->next = ptr;
-	return (ptr);
+	if (*head)
+	{
+		x = *head;
+		while (x->next)
+			x = aux->next;
+		aux->next = new;
+	}
+	else
+	{
+		*head = new;
+	}
+	return (*head);
 }

@@ -1,10 +1,6 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <stdio.h>
-
 /**
- * _r - reallocates memory for an array of pointers
- * to the nodes in a linked list
+ * _r - reallocates memory for an array of pointers to a node in a linked list
  * @list: the old list to append
  * @size: size of the new list (always one more than the old list)
  * @new: new node to add to the list
@@ -30,21 +26,22 @@ const listint_t **_r(const listint_t **list, size_t size, const listint_t *new)
 }
 
 /**
- * print_listint_safe - prints a listint_t linked list.
- * @head: pointer to the start of the list
- *
+ * print_listint_safe - prints a elements listint_t linked list.
+ * @head: pointer to the head of the list
  * Return: the number of nodes in the list
  */
+
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t i, num = 0;
+	size_t j;
+	size_t num = 0;
 	const listint_t **list = NULL;
 
 	while (head != NULL)
 	{
-		for (i = 0; i < num; i++)
+		for (j = 0; j < num; j++)
 		{
-			if (head == list[i])
+			if (head == list[j])
 			{
 				printf("-> [%p] %d\n", (void *)head, head->n);
 				free(list);
