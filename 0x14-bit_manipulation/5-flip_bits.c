@@ -1,18 +1,25 @@
-#include "main.h"
+#include <stdlib.h>
+#include "holberton.h"
+
 /**
- * flip_bits-returns the number of bits needed.
- * @n: number to flip
- * @m: number
- * Return: return number
-*/
+  * flip_bits - ...
+  * @n: ...
+  * @m: ...
+  *
+  * Return: ...
+  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-unsigned int count = 0;
-unsigned long int diff = n ^ m;
-while (diff != 0)
-{
-count += (diff & 1);
-diff >>= 1;
-}
-return (count);
+	unsigned long int mask = 0, count = 0;
+
+	mask = n ^ m;
+	while (mask)
+	{
+		if (mask & 1)
+			count++;
+
+		mask >>= 1;
+	}
+
+	return (count);
 }

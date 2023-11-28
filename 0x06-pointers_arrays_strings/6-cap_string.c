@@ -1,31 +1,33 @@
-#include "main.h"
+#include "holberton.h"
+#include <stdio.h>
 
 /**
- * cap_string - capitalizes all words in a string
- * @s: string
- * Return: address of s
- */
+  * cap_string - ...
+  * @s: ...
+  *
+  * Return: char value
+  */
 char *cap_string(char *s)
 {
-	int i = 0, j;
-	char a[] = " \t\n,;.!?\"(){}";
+	int a = 0, i;
+	int cspc = 13;
+	char spc[] = {32, '\t', '\n', 44, ';', 46, '!', '?', '"', '(', ')', '{', '}'};
 
-	while (*(s + i))
+	while (s[a])
 	{
-		if (*(s + i) >= 'a' && *(s + i) <= 'z')
+		i = 0;
+
+		while (i < cspc)
 		{
-			if (i == 0)
-				*(s + i) -= 'a' - 'A';
-			else
-			{
-				for (j = 0; j <= 12; j++)
-				{
-					if (a[j] == *(s + i - 1))
-						*(s + i) -= 'a' - 'A';
-				}
-			}
+			if ((a == 0 || s[a - 1] == spc[i]) && (s[a] >= 97 && s[a] <= 122))
+				s[a] -= 32;
+
+			i++;
 		}
-		i++;
+
+		a++;
 	}
+
 	return (s);
 }
+

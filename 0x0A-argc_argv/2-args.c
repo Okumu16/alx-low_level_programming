@@ -1,10 +1,13 @@
+#include "holberton.h"
 #include <stdio.h>
+
 /**
- * main - prints all argument it receives
- * @argc: input
- * @argv: input
- * Return: Always 0 (Success)
- */
+  * main - Prints all the args content
+  * @argc: argument count
+  * @argv: argument vector
+  *
+  * Return: Always zero
+  */
 int main(int argc, char *argv[])
 {
 	int i;
@@ -13,5 +16,7 @@ int main(int argc, char *argv[])
 	{
 		printf("%s\n", argv[i]);
 	}
+
 	return (0);
 }
+

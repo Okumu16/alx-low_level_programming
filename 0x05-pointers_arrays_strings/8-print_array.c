@@ -1,20 +1,26 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdio.h>
+
 /**
- * print_array - prints n element of an array of integers
- * Owned by Bwave
- * @a: int to check
- * @n: int to check
- * Return: 0 is success
- */
+  * print_array - Prints n elements of an array of integers
+  * @a: Array of integers
+  * @n: Number of elements of the array to be printed
+  *
+  * Return: void
+  */
 void print_array(int *a, int n)
 {
-	int x;
+	int j;
 
-	for (x = 0; x < n; x++)
-		if (x != n - 1)
-		printf("%d, ", a[x]);
-		else
-			printf("%d", a[x]);
-printf("\n");
+	for (j = 0; j < n; j++)
+	{
+		printf("%d", a[j]);
+
+		if (j != (n - 1))
+		{
+			printf(", ");
+		}
+	}
+
+	printf("\n");
 }

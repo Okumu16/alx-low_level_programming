@@ -1,18 +1,27 @@
 #include <stdio.h>
+#include <math.h>
 
 /**
- * main - print prime
- * Return: 0
- */
+  * main - Prints the largest prime factor of the number 612852475143
+  *
+  * Return: Always 0 (Success)
+  */
 int main(void)
 {
-	unsigned long int i = 3, n = 612852475143;
+	long x, maxf;
+	long number = 612852475143;
+	double square = sqrt(number);
 
-	for (; i < 12057; i += 2)
+	for (x = 1; x <= square; x++)
 	{
-		while (n % i == 0 && n != i)
-			n /= i;
+		if (number % x == 0)
+		{
+			maxf = number / x;
+		}
 	}
-	printf("%lu\n", n);
+
+	printf("%ld\n", maxf);
+
 	return (0);
 }
+
